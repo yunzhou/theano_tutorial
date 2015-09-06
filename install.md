@@ -14,9 +14,27 @@
 
 * Goto anaconda command prompt and pip install Theano
 
-* Set the following environment
- 1. add C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64; to PATH for 64bit Windows
- 2. set VSFORPYTHON = C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC
+* Set the following environment using this setenv.bat
+
+~~~~bat
+REM configuration of paths
+set VSFORPYTHON="C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC"
+set SCISOFT=%~dp0
+
+REM add tdm gcc stuff
+set PATH=c:\TDM-GCC-64\bin;c:\TDM-GCC-64\x86_64-w64-mingw32\bin;%PATH%
+
+REM add anaconda env
+CALL C:\Users\simuser\Anaconda\Scripts\anaconda.bat
+
+REM configure path for msvc compilers
+REM for a 32 bit installation change this line to
+REM CALL %VSFORPYTHON%\vcvarsall.bat
+CALL %VSFORPYTHON%\vcvarsall.bat amd64
+
+REM return a shell
+cmd.exe /k
+~~~~
 
 * Create .theanorc.txt under %USERPROFILE% folder. Copy following into file.
 
