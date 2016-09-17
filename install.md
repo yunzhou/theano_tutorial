@@ -145,3 +145,15 @@ epping_2_GenuineIntel-2.7.10-64/tmpozxlxp/88b4f8c09b81504243de03738d23d308.lib a
      11       ←[36m0.13568←[0m       ←[32m0.07851←[0m      1.72806      0.97696  4.86s
      12       ←[36m0.13062←[0m       ←[32m0.07406←[0m      1.76359      0.97785  4.89s
 ~~~~
+
+* Run the setenv.bat and install keras
+```bat
+pip install keras
+```
+* Configure pycharm to run keras
+
+  1. Run the setenv.bat
+  2. echo %PATH%
+  3. echo %lib%
+  4. echo %include%
+  5. copy these three variable values into pycharm run env vaiables
